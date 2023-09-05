@@ -1,0 +1,7 @@
+ARG_ENABLE('ext_solidity', 'ext_solidity support', 'no');
+
+if (PHP_EXT_SOLIDITY != 'no') {
+	AC_DEFINE('HAVE_EXT_SOLIDITY', 1, 'ext_solidity support enabled');
+
+	EXTENSION('ext_solidity', 'ext_solidity.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
